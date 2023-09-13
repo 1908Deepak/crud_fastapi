@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    <script src="static/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<form>
+<div class="container w-50">
+    <h1> List of Registered User </h1>
+
+    <table class="table  table-hover table-sm">
+        <thead>
+         <td>Id</td>
+         <td>Name</td>
+         <td>Image</td>
+         <td>Email</td>
+         <td>Password</td>
+         <td>Mobile No.</td>
+         <td>Bio</td>
+         <td>&nbsp;</td>
+         <td>&nbsp;</td>
+  </thead>
+        {% for user in user_list %}
+        <tr>
+            <td><a href="http://localhost:8000/user/{{user.user_id}}">{{user.user_id}}</a></td>
+            <td>{{user.user_name}}</td>
+            <td><img src="/static/images/{{user.user_image}}" width="100" height="50" alt="{{user.user_image}}" title="{{user.user_image}}"></td>
+            <td>{{user.user_email}}</td>
+            <td>{{user.user_password}}</td>
+            <td>{{user.user_mobile}}</td>
+            <td>{{user.user_description}}</td>
+            <td><a class="btn btn-warning" href="http://localhost:8000/user/edit/{{user.user_id}}">Edit</a></td>
+            <td>
+                <a class="btn btn-danger" href="http://localhost:8000/user/delete/{{user.user_id}}">Delete</a>
+
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+     <a class="btn btn-success" href="http://localhost:8000/createui">Create a new user</a>
+</div>
+</form>
+</body>
+</html>

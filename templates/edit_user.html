@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="container w-50">
+<div class="card text-left" style="width: 32rem;align:center;">
+    <div class="card-body">
+      <div class="card-header">
+        <h1> Edit user </h1>
+      </div>
+        <form action="http://localhost:8000/update" method="post">
+                <div class="mb-3">
+                      <label for="userId" class="form-label">User Id</label>
+                      <input type="text" class="form-control" id="userId" name="userId" value="{{user.user_id}}" readonly>
+                </div>
+                 <div class="mb-3">
+                      <label for="userName" class="form-label">User Name</label>
+                      <input type="text" class="form-control" id="userName"  name="userName" value="{{user.user_name}}">
+                </div>
+                 <div class="mb-3">
+                    <label for="userImage" class="form-label">User Image</label>
+                    <input type="text" class="form-control" id="userImage"  name="userImage" value="{{user.user_image}}" readonly>
+                </div>
+                <div class="mb-3">
+                  <label for="userImage" class="form-label">User Email</label>
+                  <input type="text" class="form-control" id="userEmail"  name="userEmail" value="{{user.user_email}}" readonly>
+               </div>
+               <div class="mb-3">
+                  <label for="userImage" class="form-label">User Password</label>
+                  <input type="text" class="form-control" id="userPassword"  name="userPassword" value="{{user.user_password}}" readonly>
+               </div>
+               <div class="mb-3">
+                  <label for="userImage" class="form-label">User Mobile No.</label>
+                  <input type="text" class="form-control" id="userMobile"  name="userMobile" value="{{user.user_mobile}}" readonly>
+               </div>
+                <div class="mb-3">
+                    <label for="userDescription" class="form-label">User Description</label>
+                    <textarea class="form-control" id="userDescription"  name="userDescription"  rows="3" readonly>{{user.user_description}}</textarea>
+                </div>
+
+                <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger">
+           </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
