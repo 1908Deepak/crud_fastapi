@@ -21,7 +21,7 @@ Maintain the directory  structure to execute the code
  * http://localhost:8000 *
 
 
- ## Procedure to run a program
+ ### Procedure to run a program
  Step 1: Download latest Version of python and set the path variable of Python if needed.
  Step 2: Now, Download the package virtualenv by using the command "pip install Virtualenv".
  Step 3: Create virtual env by using the command python -m virtualenv XYZ(foldername).
